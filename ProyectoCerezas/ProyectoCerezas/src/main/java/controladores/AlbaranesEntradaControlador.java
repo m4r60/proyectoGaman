@@ -342,10 +342,11 @@ public class AlbaranesEntradaControlador {
 	public ModelAndView addAcumuladorE(HttpSession sesion,
 			  @RequestParam (value="n_albaran") int nAlbaran,
 			  @RequestParam (value = "tipoCereza") String tipo,
-			  @RequestParam (value = "peso")double peso, //Te tendría que poner el peso de caja por defecto al seleccionar un tipo de variedad//Javascript
-			  @RequestParam (value = "precio_kg")double precioKg) { //Te tendría que poner el precio de caja por defecto al seleccionar un tipo de variedad//Javascript
+			  @RequestParam (value = "peso")double peso) { //Te tendría que poner el precio de caja por defecto al seleccionar un tipo de variedad//Javascript
 		
-		LineaAlbaranEntrada lae = new LineaAlbaranEntrada (nAlbaran,-1,tipo, peso, precioKg);
+		Variedades v = daov.read(tipo);
+		
+		LineaAlbaranEntrada lae = new LineaAlbaranEntrada (nAlbaran,-1,tipo, peso, v.getPrecioKg());
 		
 		boolean lineaCreada = daole.create(lae); //Creas una línea y compruebas con el boolean
 		if (!lineaCreada){

@@ -1,8 +1,6 @@
 @import"reset.css";
 @import"grid.css";
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
-
-
 body {
 	font:12px/19px Arial, Helvetica, sans-serif;
 	color:#848383;
@@ -10,24 +8,29 @@ body {
 	min-width:1036px;
 	background:#000
 }
+
 html, body {
 	height:96%;
 	width: 100%;
 }
+
 html {
-	min-width:100%
+	min-width:100%;
 }
+
 /* Global Structure---------------------------------------- */
 .main {
 	margin:0 auto;
 	width:800px;
 	position:relative;
 }
+
 .main1 {
 	margin:0 auto;
 	width:800px;
 	position:relative;
 }
+
 .logo img{
 	margin-left: -50px;
 	/*margin:0 auto;*/
@@ -35,12 +38,14 @@ html {
 	height: 91px;
 	position:relative;
 }
+
 .container_12 {
 	margin:0 auto;
 	margin-left: 150px;
 	width:750px;
 	position:relative;
 }
+
 /*estructura de los filtros*/
 #filtro{
 	margin-left: -10%;
@@ -58,31 +63,40 @@ html {
 	text-align: center;
 	color:#fff;
 }
+
 #listado{
 	margin-left: -25%;
 	margin-right: 18%;
 	height: 50%;
 }
+
 #listado1{
 	margin-left: -25%;
 	margin-right: 18%;
-	height: 35%;
+	/*height: 35%;*/
 }
+#listado2{
+	margin-left: -25%;
+	margin-right: 18%;
+	height: 100%;
+}
+
 table{
 	width: 150%;
-	/*height: 100%;*/
 	text-align: left;
-	/*margin: 0 0 10em 0;*/
 	caption-side: top;
 	margin-top: 5%;
 }
+
 caption{
 	margin-bottom:-2%;
 }
+
 tr{
 	margin-left: 55%;
 	margin-top:1px;
 }
+
 th{
 	border-bottom: 1px solid #999;
    	color:#fff;
@@ -91,6 +105,11 @@ th{
    	height: 25%;
    	text-decoration: none;
 }
+
+.fila td input, select{
+	text-decoration-color: #000 !important;
+}
+
 td {
    	border-bottom: 1px solid #999;
    	color:#fff;
@@ -100,7 +119,6 @@ td {
 }
 
 .formulario{
-	/*color: #fff;*/
 	padding: -200%;
 	margin-left: 10%;
 	margin-right: -10%;
@@ -109,7 +127,6 @@ td {
 }
 
 /*----- txt,links,lines,titles -----*/
-	
 .box-1{
     border-radius:13px;
 	-moz-border-radius:13px;
@@ -117,12 +134,13 @@ td {
 	position:relative;
 	padding-bottom:12px
 }
+
 .box-1 img{
 	 width:100%;
 	 border-radius:13px 13px 0 0;
 	-moz-border-radius:13px 13px 0 0;
 	-webkit-border-radius:13px 13px 0 0;	
-	}
+}
 	
 .box-1  figcaption{
 	background:#cd96c9;
@@ -138,8 +156,8 @@ td {
 	text-align:center;
 	border-radius:0 0 13px 13px;
 	-moz-border-radius:0 0 13px 13px;
-	-webkit-border-radius:0 0 13px 13px;	
-}
+	-webkit-border-radius:0 0 13px 13px;}
+	
 .box-1  figcaption a{
 	background:url(../images/marker-1.png) no-repeat 0 0;
 	width:31px;
@@ -147,24 +165,24 @@ td {
 	display:block;
 	position:absolute;
 	top:8px;
-	right:39px
-}
+	right:39px}
+	
 .box-1  figcaption a:hover{background-position:0 bottom}	
 h1, h2, h3, h4, h5, h6 {
 	color:#fff;
 	position:relative;
 	line-height:1em;
-	font-weight:normal
-}
+	font-weight:normal}
+	
 h1 {
 	font-size:32px;
-	line-height:34px;
-}
+	line-height:34px;}
+	
 h2 {
 	font-size:30px;
 	line-height:32px;
-	padding-bottom:28px
-}
+	padding-bottom:28px}
+	
 h3 {
 	font-size:36px;	
 	font-family: 'Noto Sans', sans-serif;
@@ -180,7 +198,6 @@ h4 {
 	
 }
 h4 a{color:#fff;}
-
 
 h5 {
 	font-size:20px;
@@ -267,12 +284,7 @@ z-index:100}
  position:relative; 
 }
 
-/*.extra-block{background:url(../images/tail-bg-cont.png) repeat-x 0 bottom}*/
-/*.extra-block1{ margin: 0 auto -5%;}*/
-
-
 /**********row-top*************/
-
 .row-top{overflow:hidden;background:url(../images/tail-bg-top.png);
 padding:28px 0 17px;
 position:relative;
@@ -287,7 +299,6 @@ opacity: 0.7;
   filter: alpha(opacity=70);}
 
 /**********bgstretcher*************/
-
 .bgstretcher {
 	background: black;
 	overflow: hidden;
@@ -322,11 +333,8 @@ line-height:0;font-size:0;
 }
 #nav li a:hover,#nav li.showPage a{background-position: 0 bottom}
 
-
-
 /*********************************header*************************************/
 /*NO TOCAR NAVEGADOR*/
-
 header {
 	position:relative;
 	z-index:20;
@@ -391,10 +399,7 @@ nav{float:right;
 .menu li a:hover {background:#F04343;}
 
 .menu li.current a,
-.menu li:hover a{
-color:#fff
-
-}
+.menu li:hover a{color:#fff}
 
 .menu li ul {
 	display:none;
@@ -422,16 +427,14 @@ section#content {
 	position:relative;
 	z-index:10;
 	padding:10px 10px;
+	
 }
 section#content1 {
 	position:relative;
 	z-index:10;
-	/*padding:20px 0;*/
-	/*84*/
-}
-/*.border-vert{background:url(../images/border-vert.png) repeat-y 477px 0}*/
 
-/*Esta parte ha sido modificada para restablecer el tamaño de las fotos*/
+}
+
 .img-rounded img{
 	width: 250px;
 	height: 150px;
@@ -454,9 +457,8 @@ section#content1 {
 
 .main-block{
 	width:1450px;
-	/*margin-left: 50px;*/
 	margin:0 auto;
-	margin-top:-600px;
+	margin-top:-25%;
 	margin-bottom:30px;
 	background:url(../images/tail-cont.png);
     padding:38px 10px;
@@ -467,16 +469,12 @@ section#content1 {
 }
 
 .policy{
-	/*height:100%;*/
 	width:50%;
 	margin-left: 40%;
-	/*margin:0 auto;*/
-	/*background:#000;*/
     padding:38px 0;
 	border-radius:13px;
 	-moz-border-radius:13px;
 	-webkit-border-radius:13px;	
-	/*min-height: 565px;*/
 }
 
 .main1 h4{
@@ -630,82 +628,6 @@ dl.address div p{
 	margin-left: 30%
 }
 
-/*dl.address dt{
-	margin-top: 5%;
-	margin-left: 80%;
-	background-color: #fff;
-	font-size:14px;
-	line-height:18px;
-	color:#000;
-}*/
-
-/*dl.address dd{
-	margin-top: 5%;
-	margin-left: 20%;
-	background-color: #fff;
-	font-size:14px;
-	line-height:18px;
-	color:#000;
-}*/
-
-/*dl.address dd span {
-	display:inline-block;
-	width:100px;
-	margin-top: -30%;
-	margin-left: 50%;
-
-}*/
-
-/*dl.address dt span {
-	display:block;
-}*/
-
-/*dl.address div {  */
-	/*margin-top: -12%;*/
-  /*	margin-left: 50%;
-  	height: 100%;
-  	width: 100%;*/
-  	/*background-color: #fff;*/
-/*}*/
-
-/*dl.address dd label {
-	float:center;
-	margin-left: 10%;
-	display: block;
-	min-height: 45px;
-	position: relative;
-	margin-top: -20px;
-	padding: 1px;
-	float: left;
-	width: 100%;
-}
-*/
-/*dl.address dd input {*/
-	/*font-family:Arial, Helvetica, sans-serif;
-	font-weight:normal;*/
-  /*border: 1px solid #49413d;*/
-  /*background: url(../images/tail-input.png);*/
-  /*padding: 5px 15px;
-  margin-top: 50%;
-  margin-left: 100%;
-  font-size: 16px;
-  line-height: 20px !important;
-  color: #fff;
-  outline: none;
-  width: 220px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  margin-right: 10%;
-  float: right;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;*/
-/*}*/
-
 /***** contact form *****/
 #contact-form {
   position: relative;
@@ -713,16 +635,6 @@ dl.address div p{
   z-index: 1;
   margin: -2px 0 0;
 }
-
-/*-------------añadido: aqui podemos hacer algo---------------------*/
-/*#contact-form h3{
-	color: #0000;
-  position: relative;
-  vertical-align: top;
-  z-index: 1;
-  margin: -2px 0 0;
-}*/
-
 
 #contact-form div {
   overflow: hidden;
@@ -875,7 +787,6 @@ footer {
 	margin:0 auto;
 	width:800px;
 	position:relative;
-    /*position:fixed;*/
     top:0px;
     bottom:0px;
     left:0px;
@@ -897,9 +808,7 @@ a.close{
 
 #dialog2 .window {
 	margin:0 auto;
-	/*width:800px;*/
 	position:relative;
-  	/*position:fixed;*/
   	left:0;
   	top:0;
   	width:400px;
@@ -911,9 +820,7 @@ a.close{
 
 .window {
 	margin:0 auto;
-	/*width:800px;*/
-	/*position:relative;*/
-	height: 45%;
+	height: 70%;
   	position:fixed;
   	top: -1000px;
     left:30%;
@@ -950,9 +857,7 @@ a.close{
 	display: inline-block;
 	width: 20%;
 	margin-top: 10px;
-	/*margin-left: -25%;*/
 	margin-right: 20px;
-	/*margin-bottom: -550px auto;*/
 	position: relative;
 }
 
@@ -964,11 +869,8 @@ label{
 	text-align: center;}
 
 input{
-	/*margin-right: 80px;
-	text-align: center;*/
 	width: 30%;
 	padding-left: 2%;
-	/*float:right;*/
 	margin-right: 30%;	
 }
 
@@ -977,7 +879,6 @@ input{
 }
 
 /*Estilo de la ventana modal Baja*/
-
 #baja h1 {
   	border-bottom: 1px dashed transparent black;
   	margin:-20px -20px 0px -20px;
@@ -1009,29 +910,11 @@ input{
 	display: inline-block;
 	width: 20%;
 	margin-top: 10px;
-	/*margin-left: -25%;*/
 	margin-right: 20px;
-	/*margin-bottom: -550px auto;*/
 	position: relative;
 }
 
-/*fotos*/
-
-/*section#content3 {
-	position:relative;
-	z-index:10;
-	padding:90px 0;
-}*/
-
-/*.foto{
-	float:left;
-	width:90%;
-	height: 100%;
-}*/
-
 #foto{
 	position: relative;
-/*	width:50px;
-	height: 100px;*/
 	margin-left: -10%;
 }

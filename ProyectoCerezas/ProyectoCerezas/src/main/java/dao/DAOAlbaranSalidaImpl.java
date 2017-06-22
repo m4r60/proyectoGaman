@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -35,9 +36,28 @@ class AlbaranSalidaRowMapper implements RowMapper<AlbaranSalida>{
 		}
 		
 	}
+
+	/**
+	 * Creamos una conexion con DAOLineasAlbaranSalida
+	 */
+
+	private DAOLineaAlbaranSalida daoLineas;
+
+
+
+	public DAOLineaAlbaranSalida getDaoLineas() {
+		return daoLineas;
+	}
+
+	public void setDaoLineas(DAOLineaAlbaranSalida daoLineas) {
+		this.daoLineas = daoLineas;
+	}
+
 	/**
 	 * Establecemos la conexión con la base de datos.
 	 */
+
+	
 	private DataSource dataSource;
 		
 	public DataSource getDataSource() {
@@ -148,21 +168,42 @@ class AlbaranSalidaRowMapper implements RowMapper<AlbaranSalida>{
 
 		boolean r=false;
 		
-		String sql="update albaranes_salida set n_factura=? where n_albaran=? and n_factura is null";
+		if(nFactura>0){
+			
+			String sql="update albaranes_salida set n_factura=? where n_albaran=?";
 		
-		JdbcTemplate jdbc=new JdbcTemplate(dataSource);
+			JdbcTemplate jdbc=new JdbcTemplate(dataSource);
 		
-		try{
-			int n=jdbc.update(
+			try{
+				int n=jdbc.update(
 					sql,
 					new Object[]{nFactura, nAlbaran});
-			r=n>0;
-		}
-		catch(DataAccessException dae){
-			System.out.println("facturar AlbaranSalida - Error acceso de datos");
-			dae.printStackTrace();
+				r=n>0;
+			}
+			catch(DataAccessException dae){
+				System.out.println("facturar AlbaranSalida - Error acceso de datos");
+				dae.printStackTrace();
+			}
 		}
 		
+		else{
+			
+			String sql="update albaranes_salida set n_factura=null where n_albaran=?";
+			
+			JdbcTemplate jdbc=new JdbcTemplate(dataSource);
+		
+			try{
+				int n=jdbc.update(
+					sql,
+					new Object[]{nAlbaran});
+				r=n>0;
+			}
+			catch(DataAccessException dae){
+				System.out.println("desfacturar AlbaranSalida - Error acceso de datos");
+				dae.printStackTrace();
+			}
+		}
+				
 		return r;
 	}
 	/**
@@ -298,7 +339,8 @@ class AlbaranSalidaRowMapper implements RowMapper<AlbaranSalida>{
 	public double calcularPrecio(int nAlbaran){
 		double precio = 0;
 		
-		String sql="select if(sum(lineas_albaranes_s.precio_caja*lineas_albaranes_s.numero_cajas) is null,0,sum(lineas_albaranes_s.precio_caja*lineas_albaranes_s.numero_cajas)) "
+		String sql="select if(sum(lineas_albaranes_s.precio_caja*lineas_albaranes_s.numero_cajas) "
+				+ "is null,0,sum(lineas_albaranes_s.precio_caja*lineas_albaranes_s.numero_cajas)) "
 				+ "from lineas_albaranes_s where lineas_albaranes_s.n_albaran=?";
 		JdbcTemplate jdbc=new JdbcTemplate(dataSource);
 		System.out.println(jdbc);
@@ -322,5 +364,33 @@ class AlbaranSalidaRowMapper implements RowMapper<AlbaranSalida>{
 		precio=jdbc.queryForObject(sql,new Object[]{idLinea},Double.class);
 		
 		return precio;
+	}
+	
+	/**
+	 * Función que lee y devuelve un objeto AlbaranSalida. Se busca por nAlbaran
+	 * @param nAlbaran
+	 * @return ae
+	 */
+	public AlbaranSalida readConDetalles(int nAlbaran){
+		AlbaranSalida as=read(nAlbaran);
+		
+		as.setLineas(daoLineas.listar(nAlbaran));
+		
+		return as;
+	}
+	
+	public List<AlbaranSalida> listarConDetalle(int nFactura){
+		ArrayList<AlbaranSalida> l=new ArrayList<AlbaranSalida>();
+		
+		JdbcTemplate jdbc=new JdbcTemplate(dataSource);
+		
+		String sql="select n_albaran from albaranes_salida where n_factura=?";
+		List<Integer> ln=jdbc.queryForList(sql,new Object[]{nFactura},Integer.class);
+		for(Integer na:ln){
+			AlbaranSalida alb=readConDetalles(na);
+			l.add(alb);
+		}
+		
+		return l;
 	}
 }

@@ -18,10 +18,15 @@ public interface DAOAlbaranEntrada {
 	public boolean facturar(int nAlbaran, int nFactura);
 	public List<AlbaranEntrada> listar();
 	public List<AlbaranEntrada> listar(String cifNif);
-	//public List<AlbaranEntrada> listar(Date fecha);
+	public List<AlbaranEntrada> listar(Date fecha);
 	public List<AlbaranEntrada> buscarFecha (Date fechaInicio, Date fechaFinal);
 	public List<AlbaranEntrada> listarPendientes(String cifNif);
 	public boolean delete(int nAlbaran);
 	public double calcularPrecioE(int nAlbaran);
+	public double calcularPrecioUnaLineaE (int idLinea);
+	public AlbaranEntrada readConDetalles(int nAlbaran);
+	public List<AlbaranEntrada> listarConDetalle(int nFactura);
+	public DAOLineaAlbaranEntrada getDaoLineas();
+	public void setDaoLineas(DAOLineaAlbaranEntrada daoLineas);
 	
 }

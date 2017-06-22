@@ -1,6 +1,7 @@
 package modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import Utils.DateUtils;
 
@@ -13,11 +14,22 @@ public class FacturaSalida {
 	private int iva;
 	private double precioNeto;
 	private boolean anulacion;
+	private String cifnif;
+	private Double precioTotal;
+	
+	public List<AlbaranSalida> getAlbaranes() {
+		return albaranes;
+	}
+	public void setAlbaranes(List<AlbaranSalida> albaranes) {
+		this.albaranes = albaranes;
+	}
+	private List<AlbaranSalida> albaranes;
 	
 	/**
 	 * CONSTRUCTOR VACÍO
 	 */
 	public FacturaSalida(){}
+
 	/**
 	 * 	CONSTRUCTOR CON PARÁMETROS
 	 * @param fecha
@@ -74,5 +86,18 @@ public class FacturaSalida {
 	public void setAnulacion(boolean anulacion) {
 		this.anulacion = anulacion;
 	}
+	public String getCifnif() {
+		return cifnif;
+	}
+	public void setCifnif(String cifnif) {
+		this.cifnif = cifnif;
+	}
+	public Double getPrecioTotal() {
+		return precioTotal;
+	}
+	public void setPrecioTotal(Double precioTotal) {
+		this.precioTotal = precioTotal;
+	}
+	
 	
 }

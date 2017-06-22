@@ -344,11 +344,10 @@ public class AlbaranesSalidaControlador {
 	public ModelAndView addAcumulador(HttpSession sesion,
 			  @RequestParam (value="n_albaran") int nAlbaran,
 			  @RequestParam (value = "tipoCereza") String tipo,
-			  @RequestParam (value = "n_cajas")int nCajas,
-			  @RequestParam (value = "peso_caja")double pesoCaja, //Te tendría que poner el peso de caja por defecto al seleccionar un tipo de variedad//Javascript
-			  @RequestParam (value = "precio_caja")double precioCaja) { //Te tendría que poner el precio de caja por defecto al seleccionar un tipo de variedad//Javascript
+			  @RequestParam (value = "n_cajas")int nCajas) { //Te tendría que poner el precio de caja por defecto al seleccionar un tipo de variedad//Javascript
 		
-		LineaAlbaranSalida las = new LineaAlbaranSalida (nAlbaran, -1 ,tipo, nCajas, pesoCaja, precioCaja);
+		Variedades v = daov.read(tipo);
+		LineaAlbaranSalida las = new LineaAlbaranSalida (nAlbaran, -1 ,tipo, nCajas, v.getPesoCaja(), v.getPrecioCaja());
 		
 		boolean lineaCreada = daol.create(las); //Creas una línea y compruebas con el boolean
 		if (!lineaCreada){

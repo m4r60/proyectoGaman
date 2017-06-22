@@ -23,7 +23,7 @@ public class DAOPersonaTest extends TestCase {
 	public void testCreate(){
 		
 		Persona per=new Persona(-1, "B45263965", "Cerezas S.A.", null, "toledo", "689526341", "cerezas@gmail.com");
-		
+				
 		Properties p=System.getProperties();
 		System.out.println(p.getProperty("java.class.path"));
 		dao.create(per);
@@ -36,7 +36,9 @@ public class DAOPersonaTest extends TestCase {
 		assertEquals(per.getDireccion(),u.getDireccion());
 		assertEquals(per.getTelefono(), u.getTelefono());
 		assertEquals(per.getEmail(), u.getEmail());
-		 
+		
+		dao.delete(per.getIdPersona());
+		
 	}
 
 }

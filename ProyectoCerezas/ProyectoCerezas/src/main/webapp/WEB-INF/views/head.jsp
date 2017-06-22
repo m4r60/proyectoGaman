@@ -5,18 +5,15 @@
 <c:import url="/head1.jsp" />
 <body>
   <div class="extra-block1"> 
-      <!--==============================row-top=================================-->
+    <!--==============================row-top=================================-->
     <div class="row-top">
       <div class="main">
         <ul class="list-soc">
-          <!-- <li><a href="#"><img alt="" src="images/soc-icon1.png"></a></li> -->
-          <!-- <li><a href="#"><img alt="" src="images/soc-icon2.png"></a></li> -->
         </ul>
       </div>
     </div>
       
-      <!--==============================header=================================-->
-      
+   	<!--==============================header=================================-->
     <header>
       <div class="row-nav">
         <div class="main">
@@ -27,29 +24,21 @@
               <li title="<spring:message code='ver_listado_agricultores'/>"><a href="listadoAgricultores"><spring:message code="agricultores" /></a></li>
               <li><a><spring:message code="recogidas" /></a>
                 <ul>
-                  <li title="<spring:message code='ver_listado_facturas'/>"><a href="listarFacturasEntrada"><spring:message code="facturas" /></a>
-                    <!--<ul>
-                      <li><a href="nuevaFacturaEntrada"><spring:message code="nueva_factura" /></a></li>
-                    </ul>-->
+                  <li title="<spring:message code='ver_listado_facturas'/>"><a href="listarFacturaEntrada"><spring:message code="facturas" /></a>
+                   
                   </li>
                   <li title="<spring:message code='ver_listado_albaranes'/>"><a href="listarAlbaranEntrada"><spring:message code="albaranes" /></a>
-                   <!-- <ul>
-                      <li><a href="nuevoAlbaranEntrada"><spring:message code="nuevo_albaran" /></a></li>
-                    </ul>-->
+                   
                   </li>
                 </ul>
               </li>
               <li><a><spring:message code="ventas" /></a>
                 <ul>
-                  <li title="<spring:message code='ver_listado_facturas'/>"><a href="listarFacturasSalida"><spring:message code="facturas" /></a>
-                    <!-- <ul>
-                      <li><a href="nuevaFacturaSalida"><spring:message code="nueva_factura" /></a></li>
-                    </ul> -->
+                  <li title="<spring:message code='ver_listado_facturas'/>"><a href="listarFacturaSalida"><spring:message code="facturas" /></a>
+                   
                   </li>
                   <li title="<spring:message code='ver_listado_albaranes'/>"><a href="listarAlbaranSalida"><spring:message code="albaranes" /></a>
-                     <!--<ul>
-                      <li><a href="nuevoAlbaranSalida"><spring:message code="nuevo_albaran" /></a></li>
-                    </ul> -->
+                    
                   </li>
                 </ul>
               </li>

@@ -1,6 +1,7 @@
 package modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import Utils.DateUtils;
 
@@ -19,6 +20,7 @@ public class AlbaranSalida extends Cliente { /*Si heredo de cliente puedo conect
 	private String cifNif;
 	private double precioNeto;
 	private String fechaStr;
+	private List<LineaAlbaranSalida> lineas;
 	/******************************************************************************/
 	/**
 	 * CONSTRUCTORES
@@ -123,6 +125,14 @@ public class AlbaranSalida extends Cliente { /*Si heredo de cliente puedo conect
 
 	public void setFechaStr(String fechaStr) {
 		this.fechaStr = fechaStr;
+	}
+
+	public List<LineaAlbaranSalida> getLineas() {
+		return lineas;
+	}
+
+	public void setLineas(List<LineaAlbaranSalida> lineas) {
+		this.lineas = lineas;
 	}
 	
 	/*****************************************************************/

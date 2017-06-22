@@ -26,6 +26,7 @@ public class DateUtils {
 		return "dd/MM/yyyy";
 	}
 	
+	
 	public static String getFormatoFechaVista(){
 		return "dd/mm/yy";
 	}

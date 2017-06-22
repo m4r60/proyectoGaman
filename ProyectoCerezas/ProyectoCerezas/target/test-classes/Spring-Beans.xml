@@ -13,20 +13,12 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
-	
+			
 	<bean id="daoPersona" class="dao.DAOPersonaImpl" scope="singleton">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<bean id="daoAgricultor" class="dao.DAOAgricultorImpl" scope="singleton">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-	
-	<bean id="daoAlbaranEntrada" class="dao.DAOAlbaranEntradaImpl" scope="singleton">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-	
-	<bean id="daoAlbaranSalida" class="dao.DAOAlbaranSalidaImpl" scope="singleton">
+		<bean id="daoAgricultor" class="dao.DAOAgricultorImpl" scope="singleton">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
@@ -34,15 +26,8 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<bean id="daoFacturaEntrada" class="dao.DAOFacturaEntradaImpl" scope="singleton">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
 	
-	<bean id="daoFacturaSalida" class="dao.DAOFacturaSalidaImpl" scope="singleton">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-	
-	<bean id="daoLineaAlbaranEntrada" class="dao.DAOLineaAlbaranEntradaImpl" scope="singleton">
+	<bean id="daoAlbaranSalida" class="dao.DAOAlbaranSalidaImpl" scope="singleton">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
@@ -50,8 +35,27 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<bean id="daoVariedades" class="dao.DAOVariedadesImpl" scope="singleton">
+	<bean id="daoAlbaranEntrada" class="dao.DAOAlbaranEntradaImpl" scope="singleton">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
+	
+	<bean id="daoLineaAlbaranEntrada" class="dao.DAOLineaAlbaranEntradaImpl" scope="singleton">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	
+	<bean id="daoVariaedades" class="dao.DAOVariedadesImpl" scope="singleton">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="daoFacturaSalida" class="dao.DAOFacturaSalidaImpl" scope="singleton">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="daoFacturaEntrada" class="dao.DAOFacturaEntradaImpl" scope="singleton">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
 
 </beans>

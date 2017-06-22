@@ -1,6 +1,7 @@
 package modelos;
 
 import java.util.Date;
+import java.util.List;
 
 import Utils.DateUtils;
 
@@ -16,10 +17,11 @@ public class AlbaranEntrada extends Cliente {
 	private int nFactura;
 
 	/******************************************************************************/
-	/*Meto estas propiedades para poder mostrarlas dentro de albaranes salida*/
+	/*Meto estas propiedades para poder mostrarlas dentro de albaranes Entrada*/
 	private String cifNif;
 	private double precioNetoE;
 	private String fechaStr;
+	private List<LineaAlbaranEntrada> lineas;
 	/******************************************************************************/
 	
 	/**
@@ -50,7 +52,7 @@ public class AlbaranEntrada extends Cliente {
 		this.fecha = fecha;
 		this.nFactura = nFactura;	
 	}
-/*Constructor listar Albaranes de salida*/
+/*Constructor listar Albaranes de Entrada*/
 	
 	public AlbaranEntrada (int nAlbaran,  int nSocio, Date fecha, int nFactura,  String cifNif){
 		this.nSocio=nSocio;
@@ -108,6 +110,12 @@ public class AlbaranEntrada extends Cliente {
 	}
 	public void setnAlbaran(int nAlbaran) {
 		this.nAlbaran = nAlbaran;
+	}
+	public List<LineaAlbaranEntrada> getLineas() {
+		return lineas;
+	}
+	public void setLineas(List<LineaAlbaranEntrada> lineas) {
+		this.lineas = lineas;
 	}
 	
 	
